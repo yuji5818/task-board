@@ -1,0 +1,130 @@
+.task-board {
+  max-width: 480px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.task-board__title {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  color: #213547;
+}
+
+.task-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.task-form__input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.task-form__input:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+.task-form__button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #646cff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.task-form__button:hover {
+  background-color: #535bf2;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-list__empty {
+  color: #888;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+}
+
+.task-item__label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.task-item__label input[type='checkbox'] {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.task-item__text {
+  overflow-wrap: anywhere;
+  color: #213547;
+}
+
+.task-item--completed {
+  background-color: #f2f2f2;
+  border-color: #eaeaea;
+}
+
+.task-item--completed .task-item__text {
+  color: #9a9a9a;
+  text-decoration: line-through;
+}
+
+.task-item__delete {
+  padding: 0.35rem 0.7rem;
+  font-size: 0.85rem;
+  color: #d9534f;
+  background: transparent;
+  border: 1px solid #d9534f;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.task-item__delete:hover {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.task-board__summary {
+  margin: 1.25rem 0 0;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: right;
+}
