@@ -1,16 +1,34 @@
-# React + Vite
+# タスクボード
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React (Vite) 製のシンプルなタスクボードアプリ。
 
-Currently, two official plugins are available:
+## 機能
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- テキスト入力でタスクを追加
+- チェックボックスで完了・未完了を切り替え
+- タスクを削除
+- 完了済みタスクはグレー表示
+- `localStorage` によりリロードしてもタスクが消えない
 
-## React Compiler
+## 開発
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the Oxlint configuration
+## ビルド
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm run build
+```
+
+`dist/` に静的ファイルが出力されます。
+
+## GitHub Pages への公開
+
+`main` ブランチに push すると、GitHub Actions ([.github/workflows/deploy.yml](.github/workflows/deploy.yml)) が自動でビルドし、GitHub Pages にデプロイします。
+
+初回のみ、リポジトリの **Settings > Pages** で **Source** を **GitHub Actions** に設定してください。
+
+公開後の URL: https://yuji5818.github.io/task-board/

@@ -32,3 +32,9 @@ React (Vite) 製のシンプルなタスクボードアプリ。テキスト入�
 - `src/components/TaskList.jsx` — タスク一覧の表示。
 - `src/components/TaskItem.jsx` — 個々のタスク行（チェックボックス・削除ボタン）。完了済みは `task-item--completed` クラスでグレー表示。
 - `src/App.css` / `src/index.css` — スタイル。
+
+## デプロイ (GitHub Pages)
+
+- `vite.config.js` の `base` はリポジトリ名 `/task-board/` に固定してある（公開URL: https://yuji5818.github.io/task-board/）。リポジトリ名を変更した場合はここも合わせて変更すること。
+- `main` への push をトリガーに `.github/workflows/deploy.yml` が `npm run build` → GitHub Pages へデプロイする。
+- 初回のみ GitHub 側で Settings > Pages > Source を「GitHub Actions」に設定する必要がある（コマンドラインからは設定不可、ユーザー操作が必要）。
