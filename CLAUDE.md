@@ -6,6 +6,19 @@
 
 React (Vite) 製のシンプルなタスクボードアプリ。テキスト入力でのタスク追加、チェックボックスによる完了/未完了の切り替え、タスク削除、完了済みタスクのグレー表示に対応。
 
+## デプロイ先
+
+https://yuji5818.github.io/task-board/
+
+## 技術スタック
+
+- [React](https://react.dev/) 19
+- [Vite](https://vite.dev/) 8（ビルドツール / 開発サーバー）
+- [oxlint](https://oxc.rs/) （Lint）
+- `localStorage`（タスクの永続化。バックエンド API・DB は無し）
+- GitHub Actions + GitHub Pages（CI/CD・ホスティング）
+- 状態管理は React 標準の `useState` / `useEffect` のみ（外部ライブラリなし）
+
 ## Git運用ルール
 
 - **コードに変更を加えるたびに、必ずコミットして GitHub にプッシュすること。**
@@ -32,6 +45,13 @@ React (Vite) 製のシンプルなタスクボードアプリ。テキスト入�
 - `src/components/TaskList.jsx` — タスク一覧の表示。
 - `src/components/TaskItem.jsx` — 個々のタスク行（チェックボックス・削除ボタン）。完了済みは `task-item--completed` クラスでグレー表示。
 - `src/App.css` / `src/index.css` — スタイル。
+
+## コンポーネントの命名規約
+
+- コンポーネントは1ファイル1コンポーネント。ファイル名・関数名ともに `PascalCase`（例: `TaskForm.jsx` → `function TaskForm()`）、`src/components/` 配下に配置する。
+- コンポーネント間で親から渡すコールバック props は `on + 動詞`（例: `onAdd` / `onToggle` / `onDelete`）で統一する。
+- CSS クラス名は BEM 風（`block__element` / `block--modifier`）を使う。例: `task-item__delete`（要素）、`task-item--completed`（状態修飾子）。ブロック名はコンポーネント単位に対応させる（`TaskForm` → `task-form`、`TaskItem` → `task-item` など）。
+- state・ロジックは `App.jsx` に集約し、`components/` 配下は表示と props 経由のイベント伝播に専念させる（Presentational コンポーネントとして保つ）。
 
 ## デプロイ (GitHub Pages)
 
